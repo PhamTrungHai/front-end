@@ -11,6 +11,7 @@ export default function Files() {
     <ProtectedRoute>
       <main className="flex h-[90vh] flex-col mt-14 items-center bg-white text-black">
         <h1 className="text-4xl font-bold text-center mt-8">Your Files</h1>
+        {/* @ts-expect-error Async Server Component */}
         <FileList />
         <section className="mt-5">
           <h2 className="text-2xl font-bold text-center">Upload a file</h2>
