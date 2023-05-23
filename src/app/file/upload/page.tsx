@@ -1,6 +1,5 @@
 'use client';
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
-import Title from '@/components/Title';
 import { AiTwotoneFileAdd, AiFillDelete } from 'react-icons/ai';
 import { TiDocumentText } from 'react-icons/ti';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
@@ -8,8 +7,6 @@ import { useState, Fragment, useRef } from 'react';
 import ProtectedRoute from '@/components/ProtectedRoute';
 import { postFile } from '@/api/fetchFile';
 import { Dialog, Transition } from '@headlessui/react';
-
-export const metadata = Title('Upload File');
 
 export default function Upload() {
   const { user } = useAppSelector((state) => state.userReducer);

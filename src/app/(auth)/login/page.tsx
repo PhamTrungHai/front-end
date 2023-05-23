@@ -1,7 +1,6 @@
 'use client';
 import Image from 'next/image';
 import { useRouter, useSearchParams } from 'next/navigation';
-import Title from '@/components/Title';
 import { RiLockPasswordFill } from 'react-icons/ri';
 import { MdAlternateEmail } from 'react-icons/md';
 import Link from 'next/link';
@@ -9,8 +8,6 @@ import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { userSignIn } from '@/redux/features/userSlice';
 import { useEffect } from 'react';
 import type { User } from '@/types/User';
-
-export const metadata = Title('Login | FConnect');
 
 export default function Login() {
   const { user } = useAppSelector((state) => state.userReducer);

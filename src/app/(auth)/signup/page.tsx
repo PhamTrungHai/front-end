@@ -1,12 +1,10 @@
 'use client';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import Title from '@/components/Title';
 import { RiLockPasswordFill, RiUser2Fill } from 'react-icons/ri';
 import { MdAlternateEmail } from 'react-icons/md';
 import Link from 'next/link';
 
-export const metadata = Title('Signup | FConnect');
 export default function SignUp() {
   const router = useRouter();
   async function handlerSubmit(event: React.FormEvent<HTMLFormElement>) {
