@@ -6,6 +6,9 @@ const getFiles = cache(async (userId: number, token: string) => {
       `${process.env.NEXT_PUBLIC_FETCHURL}/File/GetFiles?userId=${userId}`,
       {
         method: 'GET',
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+        },
       }
     );
     const file = response.json();
@@ -22,6 +25,9 @@ const getOneFile = cache(async (encodedId: string) => {
       `${process.env.NEXT_PUBLIC_FETCHURL}/File/${encodedId}`,
       {
         method: 'GET',
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+        },
       }
     );
     const file = response.json();
@@ -38,6 +44,9 @@ const downloadFile = async (encodedId: string) => {
       `${process.env.NEXT_PUBLIC_FETCHURL}/File/Download/${encodedId}`,
       {
         method: 'GET',
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+        },
       }
     );
     const file = response.blob();
@@ -56,6 +65,7 @@ const postFile = async (form: HTMLFormElement, token: string) => {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`,
+          'Access-Control-Allow-Origin': '*',
         },
         body: new FormData(form),
       }
@@ -76,6 +86,7 @@ const deleteFile = async (encodedId: string, token: string) => {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,
+          'Access-Control-Allow-Origin': '*',
         },
       }
     );
